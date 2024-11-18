@@ -1,0 +1,93 @@
+{
+    "doctype": "Etsy Order",
+    "name": "Etsy Order",
+    "module": "Etsy ERPNext",
+    "custom": 0,
+    "fields": [
+        {
+            "fieldname": "etsy_order_id",
+            "fieldtype": "Data",
+            "label": "Etsy Order ID",
+            "reqd": 1,
+            "unique": 1,
+            "description": "The unique ID of the order in Etsy."
+        },
+        {
+            "fieldname": "order_status",
+            "fieldtype": "Select",
+            "label": "Order Status",
+            "reqd": 1,
+            "options": "\nopen\ncompleted\ncancelled\nshipped",
+            "description": "The current status of the order."
+        },
+        {
+            "fieldname": "buyer_name",
+            "fieldtype": "Data",
+            "label": "Buyer Name",
+            "reqd": 1,
+            "description": "The name of the buyer."
+        },
+        {
+            "fieldname": "buyer_email",
+            "fieldtype": "Data",
+            "label": "Buyer Email",
+            "description": "The email address of the buyer."
+        },
+        {
+            "fieldname": "order_total",
+            "fieldtype": "Currency",
+            "label": "Order Total",
+            "reqd": 1,
+            "description": "The total amount of the order."
+        },
+        {
+            "fieldname": "order_date",
+            "fieldtype": "Datetime",
+            "label": "Order Date",
+            "reqd": 1,
+            "description": "The date and time when the order was placed."
+        },
+        {
+            "fieldname": "shipping_address",
+            "fieldtype": "Text",
+            "label": "Shipping Address",
+            "description": "The shipping address for the order."
+        },
+        {
+            "fieldname": "items",
+            "fieldtype": "Table",
+            "label": "Order Items",
+            "options": "Etsy Order Item",
+            "description": "The list of items in the order."
+        },
+        {
+            "fieldname": "tracking_number",
+            "fieldtype": "Data",
+            "label": "Tracking Number",
+            "description": "The tracking number for the shipment."
+        },
+        {
+            "fieldname": "sync_status",
+            "fieldtype": "Select",
+            "label": "Sync Status",
+            "options": "\nPending\nSynced\nError",
+            "default": "Pending",
+            "description": "The synchronization status of this order."
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes",
+            "description": "Additional notes related to the order."
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        }
+    ]
+}
